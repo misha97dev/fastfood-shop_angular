@@ -1,0 +1,139 @@
+<div class="container page menu-page">
+  <button
+    mat-raised-button
+    class="btn-yellow menu-page__add-btn"
+    (click)="openDialog()"
+  >
+    <mat-icon>add_circle_outline</mat-icon>
+    <span>Add product</span>
+  </button>
+  <h1 class="page__title">Menu</h1>
+  <div class="menu-page__content">
+    <div class="menu-page__navbar">
+      <mat-list role="list">
+        <mat-list-item role="listitem" (click)="getBurgers()">
+          <mat-icon class="navbar__item-ico">lunch_dining</mat-icon>
+          <span class="navbar__item-name">Burgers</span>
+        </mat-list-item>
+        <mat-list-item role="listitem" (click)="getPizza()">
+          <mat-icon class="navbar__item-ico">local_pizza</mat-icon>
+          <span class="navbar__item-name">Pizza</span>
+        </mat-list-item>
+        <mat-list-item role="listitem" (click)="getDrinks()">
+          <mat-icon class="navbar__item-ico">local_cafe</mat-icon>
+          <span class="navbar__item-name">Drinks</span>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <div *ngIf="burgers" class="menu-page__cards">
+      <mat-card *ngFor="let item of burgerArr">
+        <mat-card-header>
+          <mat-card-title>{{ item.name }}</mat-card-title>
+        </mat-card-header>
+        <div class="menu-card__img">
+          <img *ngIf="item.image" mat-card-image src="{{ item.image }}" />
+          <img
+            *ngIf="!item.image"
+            mat-card-image
+            src="./../../../../assets/images/no-image.png"
+          />
+        </div>
+
+        <mat-card-content>
+          <div class="menu-card__ingredients">
+            <span>Ingredients:</span>
+            <span *ngFor="let ingredient of item.ingredients"
+              >{{ ingredient }}&nbsp;</span
+            >
+          </div>
+          <div class="menu-card__price">{{ item.price }} ₴</div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button class="btn-red" (click)="addToBasket(item)">
+            <mat-icon>shopping_cart</mat-icon>
+            <span>Buy</span>
+          </button>
+          <button
+            mat-raised-button
+            class="btn-yellow"
+            [routerLink]="['/burger', item.id]"
+          >
+            <mat-icon>info</mat-icon>
+            <span>Details</span>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div *ngIf="pizza" class="menu-page__cards">
+      <mat-card *ngFor="let item of pizzaArr">
+        <mat-card-header>
+          <mat-card-title>{{ item.name }}</mat-card-title>
+        </mat-card-header>
+        <div class="menu-card__img">
+          <img *ngIf="item.image" mat-card-image src="{{ item.image }}" />
+          <img
+            *ngIf="!item.image"
+            mat-card-image
+            src="./../../../../assets/images/no-image.png"
+          />
+        </div>
+        <mat-card-content>
+          <div class="menu-card__ingredients">
+            <span>Ingredients: </span>
+            <span *ngFor="let ingredient of item.ingredients"
+              >{{ ingredient }}&nbsp;</span
+            >
+          </div>
+          <div class="menu-card__price">{{ item.price }} ₴</div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button class="btn-red" (click)="addToBasket(item)">
+            <mat-icon>shopping_cart</mat-icon>
+            <span>Buy</span>
+          </button>
+          <button
+            mat-raised-button
+            class="btn-yellow"
+            [routerLink]="['/pizza', item.id]"
+          >
+            <mat-icon>info</mat-icon>
+            <span>Details</span>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <div *ngIf="drinks" class="menu-page__cards">
+      <mat-card *ngFor="let item of drinkArr" class="drink-card">
+        <mat-card-header>
+          <mat-card-title>{{ item.name }}</mat-card-title>
+        </mat-card-header>
+        <div class="menu-card__img">
+          <img *ngIf="item.image" mat-card-image src="{{ item.image }}" />
+          <img
+            *ngIf="!item.image"
+            mat-card-image
+            src="./../../../../assets/images/no-image.png"
+          />
+        </div>
+        <mat-card-content>
+          <div class="menu-card__price">{{ item.price }} ₴</div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button class="btn-red" (click)="addToBasket(item)">
+            <mat-icon>shopping_cart</mat-icon>
+            <span>Buy</span>
+          </button>
+          <button
+            mat-raised-button
+            class="btn-yellow"
+            [routerLink]="['/drink', item.id]"
+          >
+            <mat-icon>info</mat-icon>
+            <span>Details</span>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+<app-snack-bar></app-snack-bar>

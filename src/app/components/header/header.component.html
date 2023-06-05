@@ -1,0 +1,43 @@
+<mat-toolbar class="header">
+  <mat-toolbar-row class="header__row container">
+    <div routerLink="" class="header__main">
+      <mat-icon class="header__logo">home</mat-icon>
+      <span>Shop</span>
+    </div>
+    <span class="example-spacer"></span>
+    <div class="header__btns desktop">
+      <button
+        class="btn-yellow header__btn"
+        mat-raised-button
+        color="primary"
+        routerLink="menu"
+      >
+        <mat-icon>fastfood</mat-icon>
+        <span>Menu</span>
+      </button>
+      <button
+        class="btn-yellow header__btn"
+        mat-raised-button
+        color="primary"
+        routerLink="basket"
+      >
+        <mat-icon>shopping_cart</mat-icon>
+        <span>Basket</span>
+      </button>
+    </div>
+    <button
+      class="header__burger mobile"
+      *ngIf="!showMenu"
+      (click)="showMenu = true"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <button
+      class="header__burger mobile"
+      *ngIf="showMenu"
+      (click)="showMenu = false"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>

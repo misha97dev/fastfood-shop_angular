@@ -1,0 +1,87 @@
+@import "./../../../assets/variables";
+.basket-page {
+  &__empty {
+    width: 100%;
+    text-align: center;
+    font-size: 32px;
+  }
+}
+.basket-card {
+  padding: 16px;
+  margin-bottom: 16px;
+  &__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    column-gap: 16px;
+  }
+  &__left,
+  &__right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    column-gap: 16px;
+  }
+  &__image {
+    min-width: 300px;
+    max-width: 300px;
+    max-height: 300px;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  &__name {
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 600;
+    color: $main_black;
+    margin-bottom: 16px;
+  }
+  &__ingredients {
+    color: $main_grey;
+    margin-bottom: 32px;
+  }
+  &__count {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 24px;
+    column-gap: 16px;
+  }
+  &__price {
+    font-size: 28px;
+    color: $main_black;
+    white-space: nowrap;
+    font-weight: 600;
+  }
+}
+button.count-btn {
+  font-size: 20px;
+  font-weight: 600;
+  width: 24px;
+  height: 24px;
+}
+button.add-btn {
+  background-color: $main_yellow;
+  color: $main_red;
+}
+button.del-btn {
+  background-color: $main_red;
+  color: $main_yellow;
+}

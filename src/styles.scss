@@ -1,0 +1,283 @@
+@import "./assets/variables";
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+:focus,
+:active {
+  outline: none;
+}
+a:focus,
+a:active {
+  outline: none;
+}
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+html,
+body {
+  min-height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  position: relative;
+}
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+input::-ms-clear {
+  display: none;
+}
+button {
+  cursor: pointer;
+}
+button:-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+  margin: 0;
+}
+body {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 64px;
+  color: $main_black;
+}
+//page__title
+.mat-typography h1 {
+  font-size: 40px;
+  font-weight: 600;
+  font-family: "Pacifico", sans-serif;
+  line-height: 44px;
+  letter-spacing: 12px;
+  color: $main_yellow;
+  text-shadow: rgb(222, 0, 0) 3px 0px 0px,
+    rgb(222, 0, 0) 2.83487px 0.981584px 0px,
+    rgb(222, 0, 0) 2.35766px 1.85511px 0px,
+    rgb(222, 0, 0) 1.62091px 2.52441px 0px,
+    rgb(222, 0, 0) 0.705713px 2.91581px 0px,
+    rgb(222, 0, 0) -0.287171px 2.98622px 0px,
+    rgb(222, 0, 0) -1.24844px 2.72789px 0px,
+    rgb(222, 0, 0) -2.07227px 2.16926px 0px,
+    rgb(222, 0, 0) -2.66798px 1.37182px 0px,
+    rgb(222, 0, 0) -2.96998px 0.42336px 0px,
+    rgb(222, 0, 0) -2.94502px -0.571704px 0px,
+    rgb(222, 0, 0) -2.59586px -1.50383px 0px,
+    rgb(222, 0, 0) -1.96093px -2.27041px 0px,
+    rgb(222, 0, 0) -1.11013px -2.78704px 0px,
+    rgb(222, 0, 0) -0.137119px -2.99686px 0px,
+    rgb(222, 0, 0) 0.850987px -2.87677px 0px,
+    rgb(222, 0, 0) 1.74541px -2.43999px 0px,
+    rgb(222, 0, 0) 2.44769px -1.73459px 0px,
+    rgb(222, 0, 0) 2.88051px -0.838247px 0px;
+}
+.app {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  &__bg {
+    background-image: url(./assets/images/background.png);
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.3;
+    z-index: -1;
+    background-repeat: repeat;
+  }
+  &__content {
+    flex: 1 1 auto;
+  }
+}
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.page {
+  padding: 20px 0;
+  &__title {
+    text-align: center;
+  }
+}
+// buttons
+button.mat-mdc-raised-button.btn-yellow {
+  background: $main_yellow;
+  color: $main_red;
+  font-weight: 600;
+}
+button.mat-mdc-raised-button.btn-red {
+  background: $main_red;
+  color: $main_yellow;
+  font-weight: 600;
+}
+
+// ============== form styles start ===============
+.dialog {
+  padding: 16px;
+  min-width: 460px;
+  max-height: 90vh;
+  overflow-y: auto;
+  h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  &__btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    column-gap: 8px;
+    margin-top: 28px;
+    button {
+      width: 100%;
+    }
+  }
+}
+.add-photo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  column-gap: 24px;
+  margin-bottom: 16px;
+  img {
+    max-width: 200px;
+  }
+}
+.add-ingredient {
+  margin-bottom: 16px;
+  margin-top: -8px;
+  text-align: center;
+}
+.example-form {
+  min-width: 250px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.mat-primary
+  .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled)
+  .mdc-list-item__primary-text,
+.mat-primary .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-minimal::after,
+.mat-primary
+  .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-minimal::after,
+.mat-mdc-form-field.mat-focused.mat-primary .mat-mdc-select-arrow,
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label,
+.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: $main_red;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled)
+  .mdc-line-ripple::before {
+  border-bottom-color: $main_black;
+}
+.mdc-text-field--filled .mdc-line-ripple::after {
+  border-bottom-color: $main_red;
+}
+
+.mat-mdc-select-arrow {
+  color: $main_black;
+}
+.mat-mdc-form-field-focus-overlay {
+  background-color: rgba(255, 255, 255);
+}
+.input-remove {
+  cursor: pointer;
+  position: absolute;
+  top: calc(50% - 12px);
+  right: 0;
+  color: $main_red;
+}
+// ============form styles end=========
+
+//==============snackbar styles==========
+.mdc-snackbar__surface {
+  padding-right: 0 !important;
+}
+.mat-mdc-snack-bar-container .mdc-snackbar__label {
+  width: 100%;
+  text-align: center;
+  background: $main_yellow;
+  color: $main_red !important;
+  font-weight: 600 !important;
+  font-size: 24px !important;
+  line-height: 28px !important;
+  letter-spacing: 4px !important;
+  border-radius: 4px;
+}
+
+.mobile {
+  display: none;
+}
+@media screen and (max-width: 1280.5px) {
+  .page {
+    padding: 20px 12px;
+  }
+}
+@media screen and (max-width: 767.5px) {
+  body {
+    padding-bottom: 100px;
+  }
+  .desktop {
+    display: none;
+  }
+}

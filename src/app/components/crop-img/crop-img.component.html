@@ -1,0 +1,17 @@
+<div mat-dialog-content>
+  <image-cropper
+    class="photo"
+    [imageChangedEvent]="data"
+    [maintainAspectRatio]="false"
+    format="png"
+    (imageCropped)="imageCropped($event)"
+    (imageLoaded)="imageLoaded()"
+    (cropperReady)="cropperReady()"
+    (loadImageFailed)="loadImageFailed()"
+  ></image-cropper>
+  <div class="dialog__btns">
+      <button mat-raised-button class="btn-yellow" (click)="submit()">
+    <span>Submit</span>
+  </button>
+  </div>
+</div>

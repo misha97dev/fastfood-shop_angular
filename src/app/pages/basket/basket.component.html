@@ -1,0 +1,48 @@
+<div class="container page basket-page">
+  <h2 class="basket-page__empty" *ngIf="basketArr.length === 0">
+    Basket is empty
+  </h2>
+  <mat-card class="basket-card" *ngFor="let item of basketArr">
+    <div class="basket-card__container">
+      <div class="basket-card__left">
+        <div class="basket-card__image">
+          <img [src]="item.image" alt="" />
+        </div>
+        <div class="basket-card__info">
+          <p class="basket-card__name">{{ item.name }}</p>
+          <div class="basket-card__ingredients">
+            <span *ngFor="let ingredient of item.ingredients">
+              {{ ingredient }}&nbsp;
+            </span>
+          </div>
+          <div class="basket-card__count">
+            <button
+              mat-mini-fab
+              (click)="decreaseCount(item)"
+              class="del-btn count-btn"
+            >
+              —
+            </button>
+            <span>{{ item.basketCount }}</span>
+
+            <button
+              mat-mini-fab
+              (click)="increaseCount(item)"
+              class="add-btn count-btn"
+            >
+              +
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="basket-card__right">
+        <div class="basket-card__price">{{ item.price }} ₴</div>
+        <button mat-raised-button class="btn-red" (click)="delete(item)">
+          <mat-icon>delete_outline</mat-icon>
+          <span>Delete</span>
+        </button>
+      </div>
+    </div>
+  </mat-card>
+</div>

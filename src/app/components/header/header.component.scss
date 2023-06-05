@@ -1,0 +1,54 @@
+@import "./../../../assets/_variables.scss";
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+.header {
+  height: 60px;
+  background-color: $main_red;
+  color: $main_yellow;
+  &__row {
+    height: 100%;
+  }
+  &__main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+    font-family: "Pacifico", sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+  }
+  &__btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    column-gap: 4px;
+  }
+  &__logo {
+    margin-right: 8px;
+    font-size: 28px;
+  }
+  &__burger {
+    color: $main_yellow;
+    font-size: 20px;
+    background: transparent;
+  }
+}
+.mobile {
+  display: none;
+}
+@media screen and (max-width: 767.5px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: block;
+  }
+}

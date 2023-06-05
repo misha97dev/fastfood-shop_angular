@@ -1,0 +1,66 @@
+<div class="dialog">
+  <h2>Edit product</h2>
+  <form [formGroup]="formGroup" class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput placeholder="Product name" />
+    </mat-form-field>
+    <div class="add-photo">
+      <img src="{{ formGroup.value.image }}" alt="" />
+      <button mat-raised-button class="btn-yellow" (click)="fileInput.click()">
+        <input
+          hidden
+          (change)="fileChangeEvent($event)"
+          #fileInput
+          type="file"
+        />
+        <mat-icon>add</mat-icon>
+        <span>Change image</span>
+      </button>
+    </div>
+    <div *ngIf="product.ingredients">
+      <mat-form-field
+        *ngFor="let ingredient of ingredientsForm.controls; let i = index"
+        class="example-full-width"
+        formArrayName="ingredients"
+      >
+        <mat-label>Ingredients</mat-label>
+
+        <input
+          style="padding-right: 28px"
+          matInput
+          type="text"
+          value="{{ ingredient.value }}"
+        />
+        <mat-icon class="input-remove" (click)="removeIngredient(i)">
+          delete_outline
+        </mat-icon>
+      </mat-form-field>
+      <div class="add-ingredient">
+        <button mat-raised-button class="btn-yellow" (click)="addIngredient()">
+          <mat-icon>add</mat-icon>
+          <span>Add ingredient</span>
+        </button>
+      </div>
+    </div>
+    <mat-form-field floatLabel="always" class="example-full-width">
+      <mat-label>Price</mat-label>
+      <input
+        matInput
+        type="number"
+        class="example-right-align"
+        placeholder="0"
+        formControlName="price"
+      />
+      <span matTextPrefix>₴&nbsp;</span>
+    </mat-form-field>
+    <div class="dialog__btns">
+      <button mat-raised-button class="btn-red" (click)="submitForm()">
+        <span>Submit</span>
+      </button>
+      <button mat-raised-button class="btn-yellow" (click)="onNoClick()">
+        <span>Close</span>
+      </button>
+    </div>
+  </form>
+</div>

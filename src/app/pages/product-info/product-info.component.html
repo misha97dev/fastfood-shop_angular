@@ -1,0 +1,30 @@
+<div class="container page product">
+  <button *ngIf="canEdit">sdfasfasfd</button>
+  <h1 class="product__name">{{ product.name }}</h1>
+  <img
+    *ngIf="product.image"
+    class="product__img"
+    src="{{ product.image }}"
+    alt=""
+  />
+  <img
+    *ngIf="!product.image"
+    class="product__img"
+    src="./../../../assets/images/no-image.png"
+    alt=""
+  />
+  <p *ngIf="product.ingredients" class="product__ingredients">
+    {{ product.ingredients }}
+  </p>
+  <p class="product__price">₴ {{ product.price }}</p>
+  <div class="product__btns">
+    <button mat-raised-button class="btn-yellow" (click)="openDialog()">
+      <mat-icon>drive_file_rename_outline</mat-icon>
+      <span>Edit</span>
+    </button>
+    <button mat-raised-button class="btn-red" (click)="deleteProduct()">
+      <mat-icon>delete_outline</mat-icon>
+      <span>Delete</span>
+    </button>
+  </div>
+</div>
